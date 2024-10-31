@@ -1,0 +1,39 @@
+<!-- restaurantCard.ejs -->
+<div class="card">
+    <img src="<%= property.imageUrl %>" alt="<%= property.imageAlt %>" class="card-image">
+    <div class="card-body">
+        <h3 class="card-title"><%= property.title %></h3>
+        <p class="card-text"><%= property.beds %> beds &bull; <%= property.baths %> baths</p>
+        <p class="card-price"><%= property.formattedPrice %> / wk</p>
+    </div>
+</div>
+
+<style>
+    .card {
+        max-width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .card-price {
+        color: #333;
+        font-size: 1rem;
+    }
+</style>

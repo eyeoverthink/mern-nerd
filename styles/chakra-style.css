@@ -1,0 +1,111 @@
+/* chakra-styles.css */
+
+:root {
+    /* Chakra-like color scheme */
+    --chakra-blue: #3182ce;
+    --chakra-gray-50: #f7fafc;
+    --chakra-gray-100: #edf2f7;
+    --chakra-gray-200: #e2e8f0;
+    --chakra-gray-300: #cbd5e0;
+    --chakra-gray-400: #a0aec0;
+    --chakra-gray-500: #718096;
+    --chakra-gray-600: #4a5568;
+    --chakra-gray-700: #2d3748;
+    --chakra-gray-800: #1a202c;
+    --chakra-gray-900: #171923;
+    --chakra-red: #e53e3e;
+    --chakra-green: #48bb78;
+    --chakra-yellow: #ecc94b;
+    --chakra-font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Global styles */
+body {
+    font-family: var(--chakra-font-sans);
+    background-color: var(--chakra-gray-50);
+    color: var(--chakra-gray-800);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Flex container */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Button */
+.button {
+    background-color: var(--chakra-blue);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--chakra-blue-dark);
+}
+
+/* Input styles */
+.input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--chakra-gray-300);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.input:focus {
+    border-color: var(--chakra-blue);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--chakra-blue);
+}
+
+/* Checkbox */
+.checkbox {
+    margin-right: 0.5rem;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background-color: var(--chakra-green);
+    color: #fff;
+}
+
+.alert-error {
+    background-color: var(--chakra-red);
+    color: #fff;
+}

@@ -1,0 +1,36 @@
+<nav class="navbar xyz-in-up-50 xyz-rotate-left-10 xyz-out-down-50">
+  <a href="/home" class="motionia-motion-swing">Home</a>
+  <a href="/attractions" class="motionia-motion-swing">Attractions</a>
+  <a href="/contact" class="motionia-motion-swing">Contact</a>
+    <a href="/about" class="motionia-motion-swing">About</a>
+    <a href="/services" class="motionia-motion-swing">Services</a>
+    <a href="/gallery" class="motionia-motion-swing">Gallery</a>
+    <a href="/blog" class="motionia-motion-swing">Blog</a>
+    <a href="/login" class="motionia-motion-swing">Login</a>
+    <a href="/register" class="motionia-motion-swing">Register</a>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animxyz@0.2.1/dist/animxyz.min.css"></link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motionia@0.0.3/dist/motionia.min.css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/animxyz@0.2.1"></script>
+
+// for buttons
+    <button class="button-primary xyz-hover-zoom motionia-motion-pulse">Learn More</button>
+
+
+// for cards 
+<section class="flex-grid">
+  <div class="card xyz-in-up-20 xyz-out-down-10 motionia-motion-bounce">Image Placeholder</div>
+  <div class="card xyz-in-up-20 xyz-out-down-10 motionia-motion-bounce">Image Placeholder</div>
+  <div class="card xyz-in-up-20 xyz-out-down-10 motionia-motion-bounce">Image Placeholder</div>
+</section>
+
+
+// for the footer 
+
+<footer class="xyz-in-down-10 motionia-motion-fade">
+  <p>&copy; 2025 EyeOverThink. All rights reserved.</p>
+
+
+</footer>
+</nav>

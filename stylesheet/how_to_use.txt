@@ -1,0 +1,10 @@
+
+
+And in your main CSS or JavaScript file, import it:
+These links and commands will help set up Chakra UI (for basic styling) and Bootstrap across various project types, with Bootstrap being particularly flexible across frameworks.
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+
