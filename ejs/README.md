@@ -1,13 +1,13 @@
 Fraymz - CSS, HTML & JavaScript Editor
 =======================================
-project: Fraymz - CSS, HTML & JavaScript Editor, and combinator. 
+project: Fraymz - CSS, HTML & JavaScript Editor, and combinator.
 author: Vaughn Scott
 date: 2021-10-14
 version: 1.0
 contact: eyeoverthink@gmail.com
 
 
-File Structure : 
+File Structure :
 
 fraymz/
 │
@@ -37,32 +37,32 @@ fraymz/
 
 Class: index.html:
 1.	Dynamic Style Management:
-•	Sliders and inputs for various style categories.
-•	Apply buttons to apply selected styles.
-•	Real-time preview updates.
+      •	Sliders and inputs for various style categories.
+      •	Apply buttons to apply selected styles.
+      •	Real-time preview updates.
 2.	JSON Profile Upload:
-•	Import custom CSS command profiles.
-•	Dynamic updating of available commands
+      •	Import custom CSS command profiles.
+      •	Dynamic updating of available commands
 
 Class: editor.css:
-enhanced styling for dynamic sections, sliders, apply buttons, 
+enhanced styling for dynamic sections, sliders, apply buttons,
 and overall layout improvements using Flexbox. This CSS ensures a responsive and visually appealing interface.
 
 
-Class: editor.js: 
+Class: editor.js:
 .	Layout and Flexbox:
 •	Utilized Flexbox to create responsive layouts for controls, style categories, and code sections.
 •	Ensured that elements wrap appropriately on smaller screens for better mobile responsiveness.
 2.	Style Categories:
-•	Each style category (Color, Background Color, Border, Font Size, Scale, Z-Index, Opacity) is encapsulated within a .style-category div.
-•	Added sliders or inputs as required, along with an Apply button and a section to display the current value.
+      •	Each style category (Color, Background Color, Border, Font Size, Scale, Z-Index, Opacity) is encapsulated within a .style-category div.
+      •	Added sliders or inputs as required, along with an Apply button and a section to display the current value.
 3.	Buttons and Inputs:
-•	Styled buttons with hover effects for better user interaction.
-•	Ensured consistent styling across all input elements.
+      •	Styled buttons with hover effects for better user interaction.
+      •	Ensured consistent styling across all input elements.
 4.	Preview and Command Suggestions:
-•	Styled the preview window (#preview-window) and the command suggestions section (#command-suggestions) for clarity and aesthetics.
+      •	Styled the preview window (#preview-window) and the command suggestions section (#command-suggestions) for clarity and aesthetics.
 5.	Responsive Design:
-•	Added media queries to adjust layouts on smaller screens, ensuring usability across devices.
+      •	Added media queries to adjust layouts on smaller screens, ensuring usability across devices.
 
 3. Complete editor.js
 
@@ -169,22 +169,22 @@ To ensure that everything works as expected, follow these testing steps:
 	•	Create a JSON File:
 	•	Example profile.json:
 
-profile.json Example : 
+profile.json Example :
 
 {
 "vs-text-red-500": "color: #ef4444;",
 "vs-bg-blue-200": "background-color: #bfdbfe;",
 "vs-border-3px-green": "border: 3px solid #10b981;"
-}	
+}
 
 
 Upload the JSON Profile:
-	•	Click on Upload CSS Profile and select profile.json.
-	•	A success notification should appear indicating the number of commands imported.
-	•	The Available Commands list should update to include the new commands.
-	•	Apply Imported Commands:
-	•	Type vs-text-red-500 in the CSS command input and apply.
-	•	Verify that the text color changes to red in the preview.
+•	Click on Upload CSS Profile and select profile.json.
+•	A success notification should appear indicating the number of commands imported.
+•	The Available Commands list should update to include the new commands.
+•	Apply Imported Commands:
+•	Type vs-text-red-500 in the CSS command input and apply.
+•	Verify that the text color changes to red in the preview.
 
 	3.	Separate File Uploads and Exports:
 	•	Uploading Files:

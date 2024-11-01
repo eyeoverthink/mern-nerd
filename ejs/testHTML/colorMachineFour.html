@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS CSS Editor</title>
+
+    <link rel="stylesheet" href="./editorFour.css">
+</head>
+<body>
+<div id="editor-container">
+    <!-- Input for CSS Commands -->
+
+    <!-- Upload JSON Profile -->
+    <div class="control">
+        <label for="json-upload">Upload CSS Profile:</label>
+        <input type="file" id="json-upload" accept=".json">
+    </div>
+    <div class="control">
+        <button id="export-json">Export CSS Profile</button>
+    </div>
+
+    <!-- Preview Area -->
+    <div id="preview-box" contenteditable="true">Preview Your Styles Here</div>
+
+    <!-- Command Suggestions -->
+    <div id="command-suggestions"></div>
+</div>
+<script src="./editorTwo.js"></script>
+</body>
+</html>

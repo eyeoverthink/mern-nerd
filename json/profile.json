@@ -1,0 +1,22 @@
+{
+  "vs-bg-blue-200": {
+    "category": "background-color",
+    "property": "backgroundColor",
+    "value": "#bfdbfe"
+  },
+  "vs-text-green-500": {
+    "category": "color",
+    "property": "color",
+    "value": "#10b981"
+  },
+  "vs-border-2px-red": {
+    "category": "border",
+    "property": "border",
+    "value": "2px solid #ef4444"
+  },
+  "vs-font-size-lg": {
+    "category": "font-size",
+    "property": "fontSize",
+    "value": "1.25rem"
+  }
+}

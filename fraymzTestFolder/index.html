@@ -1,0 +1,81 @@
+<!--&lt;!&ndash; Preview Area as Interactive Canvas &ndash;&gt;-->
+<!--<div id="preview-box" contenteditable="true">-->
+<!--    <p>Drag elements from the palette below or use commands to style this area.</p>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Element Palette for Drag-and-Drop &ndash;&gt;-->
+<!--<div id="element-palette">-->
+<!--    <h2>Element Palette</h2>-->
+<!--    <div class="draggable-element" draggable="true" data-type="text">Text</div>-->
+<!--    &lt;!&ndash; Add more elements as needed &ndash;&gt;-->
+<!--</div>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraymz - CSS, HTML & JavaScript Editor</title>
+    <link rel="stylesheet" href="./editor.css">
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="editor-container">
+    <h1>Fraymz - CSS, HTML & JavaScript Editor</h1>
+
+    <!-- Command Input Section -->
+    <div class="command-input">
+        <input type="text" id="css-input" placeholder="Type a CSS command, e.g., color: #64748b;">
+        <button id="submit-command">Apply CSS</button>
+    </div>
+
+    <!-- Upload and Export JSON Profiles -->
+    <div class="control">
+        <label for="json-upload">Upload CSS Profile:</label>
+        <input type="file" id="json-upload" accept=".json">
+        <button id="export-json">Export CSS Profile</button>
+    </div>
+
+    <!-- Color Picker and Text Size Slider -->
+    <div class="controls">
+        <div class="control">
+            <label for="color-picker">Choose Text Color:</label>
+            <input type="color" id="color-picker" value="#64748b">
+        </div>
+        <div class="control">
+            <label for="text-size">Text Size:</label>
+            <input type="range" id="text-size" min="8" max="48" step="1" value="16">
+        </div>
+    </div>
+
+    <!-- Code Sections -->
+    <div class="code-sections">
+        <div class="code-section">
+            <h2>CSS</h2>
+            <textarea id="css-code" placeholder="Type your CSS here..."></textarea>
+        </div>
+        <div class="code-section">
+            <h2>HTML</h2>
+            <textarea id="html-code" placeholder="Type your HTML here..."></textarea>
+        </div>
+        <div class="code-section">
+            <h2>JavaScript</h2>
+            <textarea id="js-code" placeholder="Type your JavaScript here..."></textarea>
+        </div>
+    </div>
+
+    <!-- Preview Window -->
+    <div id="preview-window">
+        <iframe id="preview-frame"></iframe>
+    </div>
+
+    <!-- Command Suggestions -->
+    <div id="command-suggestions"></div>
+</div>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- Load JavaScript at the end of the body -->
+<script src="./editor.js"></script>
+</body>
+</html>

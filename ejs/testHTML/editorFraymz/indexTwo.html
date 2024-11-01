@@ -1,0 +1,69 @@
+
+<head>
+    <!-- Existing head.ejs content -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js" integrity="sha512-0eEdNSCn0XrJ/qS35j80Yfe5uPaPiHVv3T3vnHkYk3UFbYcCcdRN6gqv19V34C1K/XnsF8lmh2mOWr8A4kVbHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+Step 2: Modify index.html to Replace #preview-box with a Canvas
+
+Update the preview area to include an HTML5 Canvas element:
+
+<!-- Replace the preview-box div with a canvas -->
+<div id="preview-container">
+    <canvas id="preview-canvas" width="800" height="600" style="border:1px solid #ccc;"></canvas>
+</div>
+
+Updated index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraymz CSS Editor</title>
+    <link rel="stylesheet" href="editor.css">
+    <!-- Fabric.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js" integrity="sha512-0eEdNSCn0XrJ/qS35j80Yfe5uPaPiHVv3T3vnHkYk3UFbYcCcdRN6gqv19V34C1K/XnsF8lmh2mOWr8A4kVbHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div id="editor-container">
+    <!-- Command Input with Submit Button -->
+    <div class="command-input">
+        <input type="text" id="css-input" placeholder="Type a command, e.g., vs-text-slate-500">
+        <button id="submit-command">Apply</button>
+    </div>
+
+    <!-- Upload JSON Profile -->
+    <div class="control">
+        <label for="json-upload">Upload CSS Profile:</label>
+        <input type="file" id="json-upload" accept=".json">
+    </div>
+
+    <!-- Export JSON Profile -->
+    <div class="control">
+        <button id="export-json">Export CSS Profile</button>
+    </div>
+
+    <!-- Color Picker and Text Size Slider -->
+    <div class="controls">
+        <div class="control">
+            <label for="color-picker">Choose Text Color:</label>
+            <input type="color" id="color-picker" value="#64748b">
+        </div>
+        <div class="control">
+            <label for="text-size">Text Size:</label>
+            <input type="range" id="text-size" min="8" max="48" step="1" value="16">
+        </div>
+    </div>
+
+    <!-- Preview Area as Canvas -->
+    <div id="preview-container">
+        <canvas id="preview-canvas" width="800" height="600" style="border:1px solid #ccc;"></canvas>
+    </div>
+
+    <!-- Command Suggestions -->
+    <div id="command-suggestions"></div>
+</div>
+<script src="editor.js"></script>
+</body>
+</html>

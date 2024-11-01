@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS CSS Editor</title>
+    <link rel="stylesheet" href="./fraymz.css">
+</head>
+<body>
+<div id="editor-container">
+    <!-- Input for CSS Commands with Submit Button -->
+    <div class="command-input">
+        <input type="text" id="css-input" placeholder="Type a command, e.g., vs-text-slate-500">
+        <button id="submit-command">Apply</button>
+    </div>
+
+    <!-- Upload JSON Profile -->
+    <div class="control">
+        <label for="json-upload">Upload CSS Profile:</label>
+        <input type="file" id="json-upload" accept=".json">
+    </div>
+
+    <!-- Color Picker and Text Size Slider -->
+    <div class="controls">
+        <div class="control">
+            <label for="color-picker">Choose Text Color:</label>
+            <input type="color" id="color-picker" value="#64748b">
+        </div>
+        <div class="control">
+            <label for="text-size">Text Size:</label>
+            <input type="range" id="text-size" min="8" max="48" step="1" value="16">
+        </div>
+    </div>
+
+    <!-- Preview Area -->
+    <div id="preview-box" contenteditable="true">Preview Your Styles Here</div>
+
+    <!-- Command Suggestions -->
+    <div id="command-suggestions"></div>
+</div>
+<script src="./scripts.js"></script>
+</body>
+</html>

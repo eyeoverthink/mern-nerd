@@ -1,0 +1,102 @@
+/* tailwind-styles.css */
+
+:root {
+    --tw-blue: #3b82f6;
+    --tw-gray-50: #f9fafb;
+    --tw-gray-100: #f3f4f6;
+    --tw-gray-200: #e5e7eb;
+    --tw-gray-300: #d1d5db;
+    --tw-gray-800: #1f2937;
+    --tw-gray-900: #111827;
+    --tw-font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--tw-font-sans);
+    background-color: var(--tw-gray-50);
+    color: var(--tw-gray-800);
+    margin: 0;
+    padding: 0;
+}
+
+/* Utility classes */
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.bg-blue-500 {
+    background-color: var(--tw-blue);
+    color: white;
+}
+
+.text-gray-900 {
+    color: var(--tw-gray-900);
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.m-4 {
+    margin: 1rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Button */
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--tw-blue);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+/* Input */
+.input {
+    padding: 0.5rem;
+    border: 1px solid var(--tw-gray-200);
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--tw-blue);
+}
+
+/* Card */
+.card {
+    background-color: white;
+    border: 1px solid var(--tw-gray-200);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

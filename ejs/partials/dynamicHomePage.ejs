@@ -1,0 +1,188 @@
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .bg-1 {
+            background-color: #1abc9c;
+            color: #ffffff;
+        }
+
+        .bg-2 {
+            background-color: #474e5d;
+            color: #ffffff;
+        }
+
+        .bg-3 {
+            background-color: #ffffff;
+            color: #555555;
+        }
+
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+
+        .dropdown-menu {
+            background-color: #474e5d;
+            color: #ffffff;
+        }
+
+        .dropdown-menu li a {
+            color: #ffffff !important;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #1abc9c !important;
+        }
+
+        .image-box {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .image-box p {
+            margin-top: 10px;
+        }
+
+        /* Main image section styling */
+        .main-image-container {
+            position: relative;
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+        }
+
+        .main-image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- Logo with dropdown trigger -->
+            <div class="dropdown">
+                <a href="#" class="navbar-brand dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="https://via.placeholder.com/40" alt="Logo" style="display: inline-block; vertical-align: middle;">
+                    Logo
+                </a>
+                <!-- Dropdown menu -->
+                <ul class="dropdown-menu">
+                    <li><a href="#section1">Section 1</a></li>
+                    <li><a href="#section2">Section 2</a></li>
+                    <li><a href="#section3">Section 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<%- include('./partials/menu'); %>
+
+<!-- Main Image Section -->
+<div class="main-image-container">
+    <img src="https://placekitten.com/1200/500" alt="Main Image" class="img image-box">
+</div>
+
+<!-- Image Boxes Section -->
+<div class="container-fluid bg-3 text-center">
+    <div class="row">
+        <!-- Image box 1 -->
+        <div class="col-sm-4">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/150" alt="Image 1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <!-- Image box 2 -->
+        <div class="col-sm-4">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/150" alt="Image 2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <!-- Image box 3 -->
+        <div class="col-sm-4">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/150" alt="Image 3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Image box 4 -->
+        <div class="col-sm-4">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/150" alt="Image 4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <!-- Image box 5 -->
+        <div class="col-sm-4">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/150" alt="Image 5">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <!-- Image box 6 -->
+        <div class="col-sm-4">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/150" alt="Image 6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/script'); %>
+
+</body>
+</html>
+<%- include('./partials/script'); %>
+

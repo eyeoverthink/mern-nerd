@@ -1,0 +1,22 @@
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Compare this snippet from ejs/testHTML/editorFraymz/annimations/annimate.css: */
+/*  */
+/* @keyframes fadeIn { */
+/*   from { */
+/*     opacity: 0; */
+/*   } */
+/*   to { */
+/*     opacity: 1; */
+/*   } */
+/* } */
+/* Compare this snippet from fraymzTestFolder/annimations/annimate.css: */
+/*  */

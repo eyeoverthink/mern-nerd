@@ -1,0 +1,76 @@
+/* Body and Base Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --background-color: #f3f4f6;
+    --text-color: #333;
+    --primary-color: #3b82f6;
+    --button-hover: #2563eb;
+}
+
+.dark-mode {
+    --background-color: #1e293b;
+    --text-color: #f9fafb;
+    --primary-color: #94a3b8;
+}
+
+/* Button Styling */
+.primary-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+.primary-button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Gallery Tilt Effect */
+.image-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-card {
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.image-card img {
+    width: 100%;
+    display: block;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e2937;
+    color: #9ca3af;
+}
+
+.signup-form {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 15px;
+}
+.signup-form input {
+    padding: 8px;
+    border-radius: 5px;
+}
+.signup-form button {
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}

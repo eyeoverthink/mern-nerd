@@ -1,0 +1,169 @@
+<!--<div id="editor">-->
+<!--    <h2>Live CSS Editor</h2>-->
+
+<!--    &lt;!&ndash; Text Size Controller &ndash;&gt;-->
+<!--    <div class="control">-->
+<!--        <label for="text-size">Text Size:</label>-->
+<!--        <input type="range" id="text-size" min="8" max="48" step="1" value="16" />-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Color Picker &ndash;&gt;-->
+<!--    <div class="control">-->
+<!--        <label for="text-color">Text Color:</label>-->
+<!--        <input type="color" id="text-color" value="#333333" />-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Custom Class Input Box &ndash;&gt;-->
+<!--    <div class="control">-->
+<!--        <label for="custom-class">Custom Class:</label>-->
+<!--        <input type="text" id="custom-class" placeholder="e.g., vs-bg-yellow-200" />-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Apply Button &ndash;&gt;-->
+<!--    <button id="apply-changes">Apply Changes</button>-->
+
+<!--    &lt;!&ndash; Sample text area for live preview &ndash;&gt;-->
+<!--    <div id="preview" class="vs-bg-gray-200 vs-text-black">-->
+<!--        <p>Sample Text: Watch this space update!</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    // Selectors for the controls-->
+<!--    const textSizeInput = document.getElementById("text-size");-->
+<!--    const textColorInput = document.getElementById("text-color");-->
+<!--    const customClassInput = document.getElementById("custom-class");-->
+<!--    const preview = document.getElementById("preview");-->
+<!--    const applyButton = document.getElementById("apply-changes");-->
+
+<!--    // Event listener to update size in real-time-->
+<!--    textSizeInput.addEventListener("input", () => {-->
+<!--        preview.style.fontSize = `${textSizeInput.value}px`;-->
+<!--    });-->
+
+<!--    // Event listener for color changes-->
+<!--    textColorInput.addEventListener("input", () => {-->
+<!--        preview.style.color = textColorInput.value;-->
+<!--    });-->
+
+<!--    // Event listener for the apply button to add custom classes-->
+<!--    applyButton.addEventListener("click", () => {-->
+<!--        const customClass = customClassInput.value;-->
+<!--        preview.className = `vs-bg-gray-200 vs-text-black ${customClass}`;-->
+<!--    });-->
+<!--</script>-->
+
+<!--<style>-->
+<!--    /* Styling the editor */-->
+<!--    #editor {-->
+<!--        padding: 20px;-->
+<!--        border: 1px solid #ddd;-->
+<!--        border-radius: 8px;-->
+<!--        width: 300px;-->
+<!--        margin: 0 auto;-->
+<!--    }-->
+
+<!--    .control {-->
+<!--        margin-bottom: 15px;-->
+<!--    }-->
+
+<!--    #preview {-->
+<!--        padding: 20px;-->
+<!--        border: 1px solid #ddd;-->
+<!--        margin-top: 20px;-->
+<!--        text-align: center;-->
+<!--        font-size: 16px;-->
+<!--        color: #333333;-->
+<!--    }-->
+<!--</style>-->
+
+<div id="editor">
+    <h2>Live CSS Editor</h2>
+
+    <!-- Text Size Controller -->
+    <div class="control">
+        <label for="text-size">Text Size:</label>
+        <input type="range" id="text-size" min="8" max="48" step="1" value="16" />
+    </div>
+
+    <!-- Text Color Picker -->
+    <div class="control">
+        <label for="text-color">Text Color:</label>
+        <input type="color" id="text-color" value="#333333" />
+    </div>
+
+    <!-- Background Color Class Input -->
+    <div class="control">
+        <label for="custom-class">Custom Background Class:</label>
+        <input type="text" id="custom-class" placeholder="e.g., vs-bg-yellow-200" />
+    </div>
+
+    <!-- Apply Button -->
+    <button id="apply-changes">Apply Changes</button>
+
+    <!-- Sample text area for live preview -->
+    <div id="preview" class="vs-bg-gray-200 vs-text-black">
+        <p>Sample Text: Watch this space update!</p>
+    </div>
+</div>
+
+<script>
+    // Selectors for controls
+    const textSizeInput = document.getElementById("text-size");
+    const textColorInput = document.getElementById("text-color");
+    const customClassInput = document.getElementById("custom-class");
+    const preview = document.getElementById("preview");
+    const applyButton = document.getElementById("apply-changes");
+
+    // Real-time text size adjustment
+    textSizeInput.addEventListener("input", () => {
+        preview.style.fontSize = `${textSizeInput.value}px`;
+    });
+
+    // Real-time text color adjustment
+    textColorInput.addEventListener("input", () => {
+        preview.style.color = textColorInput.value;
+    });
+
+    // Apply custom background class on button click
+    applyButton.addEventListener("click", () => {
+        const customClass = customClassInput.value.trim();
+
+        // Reset preview classes to ensure background updates cleanly
+        preview.className = "vs-bg-gray-200 vs-text-black";
+
+        // Apply new background class if provided
+        if (customClass) {
+            preview.classList.add(customClass);
+        }
+    });
+</script>
+
+<style>
+    /* Editor styling */
+    #editor {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .control {
+        margin-bottom: 15px;
+    }
+
+    #preview {
+        padding: 20px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+        color: #333333;
+    }
+
+    /* Placeholder styles for vs-bg classes */
+    .vs-bg-gray-200 { background-color: #e5e7eb; }
+    .vs-bg-yellow-200 { background-color: #fef08a; }
+    .vs-bg-blue-200 { background-color: #bfdbfe; }
+</style>

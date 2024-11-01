@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.editor-container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.preview {
+    width: 75%;
+    padding: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+#editor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+#css-input {
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#preview-box {
+    width: 80%;
+    height: 200px;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+#command-suggestions {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #777;
+}

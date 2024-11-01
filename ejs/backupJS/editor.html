@@ -1,0 +1,386 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head.ejs>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Fraymz - CSS, HTML & JavaScript Editor</title>-->
+<!--    <link rel="stylesheet" href="editor.css">-->
+<!--    &lt;!&ndash; Toastr CSS &ndash;&gt;-->
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; CodeMirror CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">-->
+<!--    &lt;!&ndash; CodeMirror Themes (eclipse) &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/eclipse.min.css">-->
+<!--</head.ejs>-->
+<!--<body>-->
+<!--<div id="editor-container">-->
+<!--    <h1>Fraymz - CSS, HTML & JavaScript Editor</h1>-->
+
+<!--    &lt;!&ndash; Command Input Section &ndash;&gt;-->
+<!--    <div class="command-input">-->
+<!--        <input type="text" id="css-input" placeholder="Type a CSS command, e.g., color: #64748b;">-->
+<!--        <button id="submit-command">Apply CSS</button>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Upload and Export JSON Profiles &ndash;&gt;-->
+<!--    <div class="control">-->
+<!--        <label for="json-upload">Upload CSS Profile:</label>-->
+<!--        <input type="file" id="json-upload" accept=".json">-->
+<!--        <button id="export-json">Export CSS Profile</button>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Color Picker and Text Size Slider &ndash;&gt;-->
+<!--    <div class="controls">-->
+<!--        <div class="control">-->
+<!--            <label for="color-picker">Choose Text Color:</label>-->
+<!--            <input type="color" id="color-picker" value="#64748b">-->
+<!--        </div>-->
+<!--        <div class="control">-->
+<!--            <label for="text-size">Text Size:</label>-->
+<!--            <input type="range" id="text-size" min="8" max="48" step="1" value="16">-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Style Category Selection &ndash;&gt;-->
+<!--    <div class="controls">-->
+<!--        <div class="control">-->
+<!--            <label>Style Category:</label>-->
+<!--            <div class="radio-group">-->
+<!--                <label><input type="radio" name="style-category" value="color" checked> Color</label>-->
+<!--                <label><input type="radio" name="style-category" value="background-color"> Background Color</label>-->
+<!--                <label><input type="radio" name="style-category" value="border"> Border</label>-->
+<!--                <label><input type="radio" name="style-category" value="font-size"> Font Size</label>-->
+<!--                <label><input type="radio" name="style-category" value="scale"> Scale</label>-->
+<!--                <label><input type="radio" name="style-category" value="z-index"> Z-Index</label>-->
+<!--                <label><input type="radio" name="style-category" value="opacity"> Opacity</label>-->
+<!--                <label><input type="radio" name="style-category" value="animation"> Animation</label>-->
+<!--            </div>-->
+<!--            <div class="controls">-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-color">Color:</label>-->
+<!--                    <input type="color" id="slider-color" value="#64748b">-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-background-color">Background Color:</label>-->
+<!--                    <input type="color" id="slider-background-color" value="#ffffff">-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-border">Border:</label>-->
+<!--                    <input type="range" id="slider-border" min="0" max="10" step="1" value="1">-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-font-size">Font Size (px):</label>-->
+<!--                    <input type="range" id="slider-font-size" min="8" max="48" step="1" value="16">-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-scale">Scale:</label>-->
+<!--                    <input type="range" id="slider-scale" min="0.5" max="3" step="0.1" value="1">-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-z-index">Z-Index:</label>-->
+<!--                    <input type="number" id="slider-z-index" min="0" max="100" step="1" value="1">-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <label for="slider-opacity">Opacity:</label>-->
+<!--                    <input type="range" id="slider-opacity" min="0" max="1" step="0.1" value="1">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Apply Buttons for Sliders &ndash;&gt;-->
+<!--            <div class="controls">-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-color" class="apply-button">Apply Color</button>-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-background-color" class="apply-button">Apply Background Color</button>-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-border" class="apply-button">Apply Border</button>-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-font-size" class="apply-button">Apply Font Size</button>-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-scale" class="apply-button">Apply Scale</button>-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-z-index" class="apply-button">Apply Z-Index</button>-->
+<!--                </div>-->
+<!--                <div class="control">-->
+<!--                    <button id="apply-opacity" class="apply-button">Apply Opacity</button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Animation Controls &ndash;&gt;-->
+<!--    <div class="controls">-->
+<!--        <div class="control">-->
+<!--            <label for="animation-name">Animation Name:</label>-->
+<!--            <input type="text" id="animation-name" placeholder="e.g., fadeIn">-->
+<!--        </div>-->
+<!--        <div class="control">-->
+<!--            <label for="animation-duration">Duration (s):</label>-->
+<!--            <input type="number" id="animation-duration" placeholder="e.g., 2" min="0.1" step="0.1">-->
+<!--        </div>-->
+<!--        <div class="control">-->
+<!--            <label for="animation-iteration">Iteration Count:</label>-->
+<!--            <input type="text" id="animation-iteration" placeholder="e.g., infinite">-->
+<!--        </div>-->
+<!--        <div class="control">-->
+<!--            <label for="animation-timing">Timing Function:</label>-->
+<!--            <select id="animation-timing">-->
+<!--                <option value="linear">Linear</option>-->
+<!--                <option value="ease">Ease</option>-->
+<!--                <option value="ease-in">Ease-In</option>-->
+<!--                <option value="ease-out">Ease-Out</option>-->
+<!--                <option value="ease-in-out">Ease-In-Out</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="control">-->
+<!--            <button id="add-animation" class="apply-button">Add Animation</button>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Code Sections &ndash;&gt;-->
+<!--    <div class="code-sections">-->
+<!--        <div class="code-section">-->
+<!--            <h2>CSS</h2>-->
+<!--            <textarea id="css-code" placeholder="Type your CSS here..."></textarea>-->
+<!--            <button id="apply-css" class="apply-button">Apply CSS</button>-->
+<!--        </div>-->
+<!--        <div class="code-section">-->
+<!--            <h2>HTML</h2>-->
+<!--            <textarea id="html-code" placeholder="Type your HTML here..."></textarea>-->
+<!--            <button id="apply-html" class="apply-button">Apply HTML</button>-->
+<!--        </div>-->
+<!--        <div class="code-section">-->
+<!--            <h2>JavaScript</h2>-->
+<!--            <textarea id="js-code" placeholder="Type your JavaScript here..."></textarea>-->
+<!--            <button id="apply-js" class="apply-button">Apply JavaScript</button>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--    &lt;!&ndash; Preview Window &ndash;&gt;-->
+<!--    <div id="preview-window">-->
+<!--        <iframe id="preview-frame"></iframe>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Command Suggestions &ndash;&gt;-->
+<!--    <div id="command-suggestions"></div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; CodeMirror JS &ndash;&gt;-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>-->
+<!--&lt;!&ndash; CodeMirror Modes &ndash;&gt;-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>-->
+<!--&lt;!&ndash; CodeMirror Themes (optional) &ndash;&gt;-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/eclipse.min.js"></script>-->
+
+<!--&lt;!&ndash; Toastr JS &ndash;&gt;-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>-->
+<!--&lt;!&ndash; Load JavaScript at the end of the body &ndash;&gt;-->
+<!--<script src="editor.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraymz - CSS, HTML & JavaScript Editor</title>
+    <link rel="stylesheet" href="editor.css">
+
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <!-- CodeMirror Theme CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/eclipse.min.css">
+</head>
+<body>
+<div id="editor-container">
+    <h1>Fraymz - CSS, HTML & JavaScript Editor</h1>
+
+    <!-- Command Input Section -->
+    <div class="command-input">
+        <input type="text" id="css-input" placeholder="Type a CSS command, e.g., color: #64748b;">
+        <button id="submit-command">Apply CSS</button>
+    </div>
+
+    <!-- Upload and Export JSON Profiles -->
+    <div class="control">
+        <label for="json-upload">Upload CSS Profile:</label>
+        <input type="file" id="json-upload" accept=".json">
+        <button id="export-json">Export CSS Profile</button>
+    </div>
+
+    <!-- Separate Uploads and Exports -->
+    <div class="control">
+        <label for="css-upload">Upload CSS Profile:</label>
+        <input type="file" id="css-upload" accept=".css">
+        <button id="export-css">Export CSS</button>
+    </div>
+
+    <div class="control">
+        <label for="html-upload">Upload HTML Profile:</label>
+        <input type="file" id="html-upload" accept=".html">
+        <button id="export-html">Export HTML</button>
+    </div>
+
+    <div class="control">
+        <label for="js-upload">Upload JavaScript Profile:</label>
+        <input type="file" id="js-upload" accept=".js">
+        <button id="export-js">Export JavaScript</button>
+    </div>
+
+    <!-- Export All -->
+    <div class="control">
+        <button id="export-all" class="apply-button">Export All as HTML</button>
+    </div>
+
+    <!-- Color Picker and Text Size Slider -->
+    <div class="controls">
+        <div class="control">
+            <label for="color-picker">Choose Text Color:</label>
+            <input type="color" id="color-picker" value="#64748b">
+        </div>
+        <div class="control">
+            <label for="text-size">Text Size:</label>
+            <input type="range" id="text-size" min="8" max="48" step="1" value="16">
+        </div>
+    </div>
+
+    <!-- Style Category Selection -->
+    <div class="controls">
+        <div class="style-category">
+            <h3>Color</h3>
+            <input type="color" id="color-slider" value="#64748b">
+            <button id="apply-color" class="apply-button">Apply Color</button>
+            <div class="current-value">Current Color: #64748b</div>
+        </div>
+
+        <div class="style-category">
+            <h3>Background Color</h3>
+            <input type="color" id="background-color-slider" value="#ffffff">
+            <button id="apply-background-color" class="apply-button">Apply Background Color</button>
+            <div class="current-value">Current Background Color: #ffffff</div>
+        </div>
+
+        <div class="style-category">
+            <h3>Border</h3>
+            <input type="color" id="border-color-slider" value="#000000">
+            <input type="range" id="border-width-slider" min="0" max="10" step="1" value="1">
+            <button id="apply-border" class="apply-button">Apply Border</button>
+            <div class="current-value">Current Border: 1px solid #000000</div>
+        </div>
+
+        <div class="style-category">
+            <h3>Font Size</h3>
+            <input type="range" id="font-size-slider" min="8" max="48" step="1" value="16">
+            <button id="apply-font-size" class="apply-button">Apply Font Size</button>
+            <div class="current-value">Current Font Size: 16px</div>
+        </div>
+
+        <div class="style-category">
+            <h3>Scale</h3>
+            <input type="range" id="scale-slider" min="0.5" max="2" step="0.1" value="1">
+            <button id="apply-scale" class="apply-button">Apply Scale</button>
+            <div class="current-value">Current Scale: 1</div>
+        </div>
+
+        <div class="style-category">
+            <h3>Z-Index</h3>
+            <input type="number" id="z-index-input" min="0" max="100" step="1" value="1">
+            <button id="apply-z-index" class="apply-button">Apply Z-Index</button>
+            <div class="current-value">Current Z-Index: 1</div>
+        </div>
+
+        <div class="style-category">
+            <h3>Opacity</h3>
+            <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="1">
+            <button id="apply-opacity" class="apply-button">Apply Opacity</button>
+            <div class="current-value">Current Opacity: 1</div>
+        </div>
+    </div>
+
+    <!-- Animation Controls -->
+    <div class="controls">
+        <div class="control">
+            <label for="animation-name">Animation Name:</label>
+            <input type="text" id="animation-name" placeholder="e.g., fadeIn">
+        </div>
+        <div class="control">
+            <label for="animation-duration">Duration (s):</label>
+            <input type="number" id="animation-duration" placeholder="e.g., 2" min="0.1" step="0.1">
+        </div>
+        <div class="control">
+            <label for="animation-iteration">Iteration Count:</label>
+            <input type="text" id="animation-iteration" placeholder="e.g., infinite">
+        </div>
+        <div class="control">
+            <label for="animation-timing">Timing Function:</label>
+            <select id="animation-timing">
+                <option value="linear">Linear</option>
+                <option value="ease">Ease</option>
+                <option value="ease-in">Ease-In</option>
+                <option value="ease-out">Ease-Out</option>
+                <option value="ease-in-out">Ease-In-Out</option>
+            </select>
+        </div>
+        <div class="control">
+            <button id="add-animation" class="apply-button">Add Animation</button>
+        </div>
+    </div>
+
+    <!-- Code Sections -->
+    <div class="code-sections">
+        <div class="code-section">
+            <h2>CSS</h2>
+            <textarea id="css-code" placeholder="Type your CSS here..."></textarea>
+            <button id="apply-css" class="apply-button">Apply CSS</button>
+        </div>
+        <div class="code-section">
+            <h2>HTML</h2>
+            <textarea id="html-code" placeholder="Type your HTML here..."></textarea>
+            <button id="apply-html" class="apply-button">Apply HTML</button>
+        </div>
+        <div class="code-section">
+            <h2>JavaScript</h2>
+            <textarea id="js-code" placeholder="Type your JavaScript here..."></textarea>
+            <button id="apply-js" class="apply-button">Apply JavaScript</button>
+        </div>
+    </div>
+
+    <!-- Preview Window -->
+    <div id="preview-window">
+        <iframe id="preview-frame"></iframe>
+    </div>
+
+    <!-- Command Suggestions -->
+    <div id="command-suggestions"></div>
+</div>
+
+<!-- CodeMirror JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+<!-- CodeMirror Modes -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+<!-- CodeMirror Themes -->
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!-- Load JavaScript at the end of the body -->
+<script src="../temp/editor.js"></script>
+</body>
+</html>
+
+
